@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodmast</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-green-100">
+
+<header class="px-4 py-5">
+    <nav class="flex flex-wrap items-center justify-between gap-4">
+
+        <!-- Logo -->
+        <a href="#" class="font-bold text-xl">
+            Prodmast
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="navMenu"
+            class="cursor-pointer text-3xl md:hidden"
+        >
+            ☰
+        </button>
+
+        <!-- Navigation links and Sign Up -->
+        <div
+            id="navMenu"
+            class="hidden w-full flex-col items-center gap-4
+            md:flex md:w-auto md:flex-1 md:flex-row md:ml-8"
+        >
+            <ul class="flex flex-col items-center gap-4 md:flex-row md:mx-auto md:gap-8">
+                <li>
+                    <a href="#" class="hover:text-green-700">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-green-700">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-green-700">Services</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-green-700">Contact</a>
+                </li>
+            </ul>
+
+            <button
+                type="button"
+                class="cursor-pointer whitespace-nowrap rounded-full
+                       bg-green-950 px-6 py-2 text-white"
+            >
+                Sign Up
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+
+
+<script>
+    const menuButton = document.getElementById("menuButton");
+    const navMenu = document.getElementById("navMenu");
+
+    let isOpen = false;
+
+    menuButton.addEventListener("click", function () {
+        isOpen = !isOpen;
+
+        navMenu.classList.toggle("hidden", !isOpen);
+        navMenu.classList.toggle("flex", isOpen);
+
+        menuButton.textContent = isOpen ? "×" : "☰";
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+    });
+</script>
+
+    <!-- <main>
+        <section class="text-center mt-10">
+            <h1 class="text-6xl font-bold">The Future of Manufacturing<br>with <span class="text-green-950">Latest Technology</span></h1>
+            <p class="mt-5">Expert tec to elevate your manufacturing. Let's take your business further.</p>
+        </section>
+
+        <section class="mt-5 flex justify-center gap-4">
+            <button type="button" class="text-white bg-green-950 rounded-4xl px-6 py-2">Get Started</button>
+            <button type="button" class="bg-white rounded-4xl px-6 py-2">Try Demo</button>
+        </section>
+
+        <section class="flex justify-center items-center mt-8 gap-3">
+            <span class="text-yellow-400 text-2xl">
+                ★★★★★
+            </span>
+
+            <span class="text-2xl">5.0</span>
+        </section>
+        
+        <section class="flex justify-center items-center">
+            <span>from 80+ <a href="">reviews</a></span>
+        </section>
+
+        <section class="px-8 py-5 flex justify-center gap-4 items-end">
+
+            <img src="./assets/Knapsack_Gas_power_plant.jpg" class="w-60 h-80 rounded-2xl">
+
+            <div class="text-white flex items-center justify-center h-60 bg-green-950 px-8 rounded-2xl">
+                <p class="text-center"><span class="text-2xl">100+</span><br>Our Esteemed<br>clients and<br>partners</p>
+            </div>
+
+            <div class="flex items-center justify-center h-60 bg-green-500 px-8 rounded-2xl">
+                <p class="text-center"><span class="text-2xl">6+</span><br>Years of<br>Dedicated<br>Service</p>
+            </div>
+
+            <div class="flex items-end w-60 h-80 bg-green-950 rounded-2xl">
+                <p class="text-white text-xl pl-8 pb-8">Achieve Optimal<br>Efficiency and Boost<br>Productivit</p>
+
+            </div>
+
+        </section>
+
+
+    </main> -->
+
+    
+    
+</body>
+</html>
